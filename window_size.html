@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="width: 500px; height: 500px; border: 1px solid #ccc">
+      window.screen :
+      <span id="screenWidth" class="number"></span><span id="screenHeight" class="number"></span
+      ><br />
+      window.outer :
+      <span id="outerWidth" class="number"></span><span id="outerHeight" class="number"></span
+      ><br />
+      window.inner : <span id="innerWidth" class="number"></span
+      ><span id="innerHeight" class="number"></span><br />
+      documentElement.clientWidth:
+      <span id="clientWidth" class="number"></span><span id="clientHeight" class="number"></span
+      ><br />
+    </div>
+
+    <script>
+      const scrWidth = document.getElementById('screenWidth');
+      const scrHeight = document.getElementById('screenHeight');
+      const outWidth = document.getElementById('outerWidth');
+      const outHeight = document.getElementById('outerHeight');
+      const innWidth = document.getElementById('innerWidth');
+      const innHeight = document.getElementById('innerHeight');
+      const cliWidth = document.getElementById('clientWidth');
+      const cliHeight = document.getElementById('clientHeight');
+
+      window.addEventListener('resize', () => {});
+    </script>
+  </body>
+</html>
