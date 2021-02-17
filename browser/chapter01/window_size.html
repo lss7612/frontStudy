@@ -22,16 +22,18 @@
     </div>
 
     <script>
-      const scrWidth = document.getElementById('screenWidth');
-      const scrHeight = document.getElementById('screenHeight');
-      const outWidth = document.getElementById('outerWidth');
-      const outHeight = document.getElementById('outerHeight');
-      const innWidth = document.getElementById('innerWidth');
-      const innHeight = document.getElementById('innerHeight');
-      const cliWidth = document.getElementById('clientWidth');
-      const cliHeight = document.getElementById('clientHeight');
+      let scrWidth = document.getElementById('screenWidth');
+      let scrHeight = document.getElementById('screenHeight');
+      let outWidth = document.getElementById('outerWidth');
+      let outHeight = document.getElementById('outerHeight');
+      let innWidth = document.getElementById('innerWidth');
+      let innHeight = document.getElementById('innerHeight');
+      let cliWidth = document.getElementById('clientWidth');
+      let cliHeight = document.getElementById('clientHeight');
 
-      window.addEventListener('resize', () => {});
+      window.addEventListener('resize', () => {
+        scrWidth.innerText(screen.width);
+      });
     </script>
   </body>
 </html>
