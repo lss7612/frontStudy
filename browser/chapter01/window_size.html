@@ -5,34 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .tag {
+        background-color: antiquewhite;
+        display: inline-block;
+        font-size: 30px;
+        height: 2000px;
+      }
+    </style>
   </head>
   <body>
-    <div style="width: 500px; height: 500px; border: 1px solid #ccc">
-      window.screen :
-      <span id="screenWidth" class="number"></span><span id="screenHeight" class="number"></span
-      ><br />
-      window.outer :
-      <span id="outerWidth" class="number"></span><span id="outerHeight" class="number"></span
-      ><br />
-      window.inner : <span id="innerWidth" class="number"></span
-      ><span id="innerHeight" class="number"></span><br />
-      documentElement.clientWidth:
-      <span id="clientWidth" class="number"></span><span id="clientHeight" class="number"></span
-      ><br />
-    </div>
+    <div class="tag"></div>
 
     <script>
-      let scrWidth = document.getElementById('screenWidth');
-      let scrHeight = document.getElementById('screenHeight');
-      let outWidth = document.getElementById('outerWidth');
-      let outHeight = document.getElementById('outerHeight');
-      let innWidth = document.getElementById('innerWidth');
-      let innHeight = document.getElementById('innerHeight');
-      let cliWidth = document.getElementById('clientWidth');
-      let cliHeight = document.getElementById('clientHeight');
-
+      const tag = document.querySelector('.tag');
+      console.log(tag);
+      function updateTag() {
+        let doms = (tag.innerHTML = `
+          window.screen = ${window.screen.width}, ${window.screen.height}<br>
+          window.inner = ${window.innerWidth}, ${window.innerHeight}<br>
+          window.outer = ${window.outerWidth},${window.outerHeight}<br>
+          window.client = ${document.documentElement.clientWidth},${document.documentElement.clientHeight}<br>
+        `);
+      }
+      updateTag();
       window.addEventListener('resize', () => {
-        scrWidth.innerText(screen.width);
+        updateTag();
       });
     </script>
   </body>
