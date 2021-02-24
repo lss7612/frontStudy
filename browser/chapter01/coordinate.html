@@ -15,15 +15,30 @@
         height: 200px;
         margin-top: 10px;
         background-color: antiquewhite;
+        border-radius: 10px;
       }
 
       .special {
         background-color: blueviolet;
         cursor: pointer;
       }
+
+      .buttons {
+        display: inline-block;
+        position: fixed;
+        right: 10px;
+      }
+      .buttons button {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
+    <div class="buttons">
+      <button id="by100">scroll by 100px(y)</button>
+      <button id="to100">scroll to 100px(y)</button>
+      <button id="toSpecial">scroll to special</button>
+    </div>
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
@@ -34,6 +49,16 @@
     <div class="box special"></div>
     <div class="box"></div>
     <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
 
     <script>
       const special = document.querySelector('.special');
@@ -42,6 +67,20 @@
         console.log(e.toElement);
         console.log(`page : ${e.pageX}, ${e.pageY}`);
         console.log(`clent : ${e.clientX}, ${e.clientY}`);
+      });
+
+      const by100 = document.querySelector('#by100');
+      const to100 = document.querySelector('#to100');
+      const toSpecial = document.querySelector('#toSpecial');
+
+      by100.addEventListener('click', (e) => {
+        window.scrollBy(0, 100);
+      });
+      to100.addEventListener('click', (e) => {
+        window.scrollTo(0, 100);
+      });
+      toSpecial.addEventListener('click', (e) => {
+        special.scrollIntoView();
       });
     </script>
   </body>
