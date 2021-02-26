@@ -7,8 +7,24 @@
     <title>Document</title>
     <script src="007.js" defer></script>
     <style>
+      .line {
+        background-color: aliceblue;
+        position: absolute;
+      }
+
+      .horizental {
+        width: 100%;
+        height: 1px;
+      }
+
+      .vertical {
+        width: 1px;
+        height: 100%;
+      }
+
       body {
         background-color: black;
+        cursor: cell;
       }
       .target {
         display: inline-block;
@@ -18,9 +34,18 @@
         padding: 0;
         position: absolute;
       }
+      .coordinate {
+        display: inline-block;
+        color: aliceblue;
+        position: absolute;
+        font-size: 30px;
+      }
     </style>
   </head>
   <body>
+    <div class="horizental line"></div>
+    <div class="vertical line"></div>
     <div class="target"><img src="img/target.png" /></div>
+    <div class="coordinate">값</div>
   </body>
 </html>
